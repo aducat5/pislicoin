@@ -6,24 +6,15 @@ import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { AnimatedCircularProgress } from 'react-native-circular-progress';
 import { Ionicons } from '@expo/vector-icons';
 import ClaimButton  from './components/claim-button';
-import {
-  Transition,
-  Transitioning,
-  TransitioningView,
-} from 'react-native-reanimated';
+import LikeButton from './components/like-button';
 
 function AboutScreen() {
-  const [toggled, setToggled] = useState(false);
-  const toggle = () => {setToggled(!toggled);};
-
   let animateIcon = () => {
     
   };
   return (
     <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center', backgroundColor: "white" }}>
-      <TouchableOpacity onPress={animateIcon}>
-        <Ionicons name='finger-print' size={110} color='#EFEFEF'/>
-      </TouchableOpacity>
+      <LikeButton />      
     </View>
   );
 }
