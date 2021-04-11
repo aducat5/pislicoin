@@ -6,7 +6,7 @@ import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { AnimatedCircularProgress } from 'react-native-circular-progress';
 import { Ionicons } from '@expo/vector-icons';
 import ClaimButton  from './components/claim-button';
-import LikeButton from './components/like-button';
+import AnimatedIconButton from './components/animated-icon-button';
 
 function AboutScreen() {
   let animateIcon = () => {
@@ -14,7 +14,14 @@ function AboutScreen() {
   };
   return (
     <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center', backgroundColor: "white" }}>
-      <LikeButton />      
+      <AnimatedIconButton
+        firstIcon="fingerprint"
+        firstColour="#EFEFEF"
+        firstSize={110}
+        secondIcon="fingerprint"
+        secondColour="#00e0ff"
+        secondSize={110}
+      />
     </View>
   );
 }
@@ -35,6 +42,7 @@ function MinerScreen() {
       setLevel(0);
       setClaimEnabled(false);
     }
+    console.log(balance);
   };
 
   let interval = 500;
